@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<a href="{{URL::to("permissions/create")}}" class="btn btn-outline-primary">Create Permission</a>
-<table class="table table">
+<a href="{{URL::to("statuses/create")}}" class="btn btn-outline-primary">Create Status</a>
+<table class="table table">-
     <thead>
     <tr>
         <th>Id</th>
@@ -14,16 +14,16 @@
     </thead>
 
     <tbody>
-        @foreach ($permissions as $permission)
+        @foreach ($statuses as $status)
             <tr>
-               <td>{{$permission->id}}</td> 
-               <td>{{$permission->name}}</td> 
-               <td>{{$permission->created_at}}</td> 
-               <td>{{$permission->updated_at}}</td> 
+               <td>{{$status->id}}</td> 
+               <td>{{$status->name}}</td> 
+               <td>{{$status->created_at}}</td> 
+               <td>{{$status->updated_at}}</td> 
                <td>
                 <div class="d-flex">
-                    <a href="{{URL::to("permissions/".$permission->id."/edit")}}"class="btn btn-outline-secondary me-3">Edit</a>
-                    <form method="post" action="{{route('permissions.destroy',$permission->id)}}">
+                    <a href="{{URL::to("statuses/".$status->id."/edit")}}"class="btn btn-outline-secondary me-3">Edit</a>
+                    <form method="post" action="{{route('statuses.destroy',$status->id)}}">
                         @csrf
                         @method('DELETE')
                         <input type="submit" value="Delete" class="btn btn-outline-danger">

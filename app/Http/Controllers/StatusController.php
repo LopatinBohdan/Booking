@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Status;
 use Illuminate\Http\Request;
+use DateTime;
 
 class StatusController extends Controller
 {
@@ -12,7 +13,8 @@ class StatusController extends Controller
      */
     public function index()
     {
-        //
+        $statuses=Status::all();
+        return view('statuses.index', compact('statuses'));
     }
 
     /**
@@ -20,7 +22,7 @@ class StatusController extends Controller
      */
     public function create()
     {
-        //
+        return view('statuses.create');
     }
 
     /**
@@ -28,7 +30,8 @@ class StatusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Status::create(['name'=>$request->get('name')]);
+        return redirect('statuses');
     }
 
     /**
@@ -42,24 +45,36 @@ class StatusController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Status $status)
+    public function edit(string $id)
     {
-        //
+        $status=Status::find($id);
+        return view('statuses.edit', compact('status'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Status $status)
+    public function update(Request $request,string $id)
     {
-        //
+        $status=Status::find($id);
+        $data=$request->validate([
+            'name'=>'required',
+        ]);
+
+        $status->name=$data['name'];
+        $status->updated_at=new DateTime();
+
+        $status->save();
+        return redirect('/statuses');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Status $status)
+    public function destroy(string $id)
     {
-        //
+        $status=Status::find($id);
+        $status->delete();
+        return redirect('statuses');
     }
 }

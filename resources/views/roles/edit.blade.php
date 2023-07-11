@@ -13,6 +13,6 @@
             </label>
         @endfor
    </div>
-    <input type="submit" class="btn btn-primary" value="Edit Role">
+    <input type="submit" class="btn btn-outline-primary" value="Edit Role">
 </form>
 @endsection

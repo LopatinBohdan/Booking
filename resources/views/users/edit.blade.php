@@ -14,7 +14,7 @@
             </label>
         @endfor
    </div>
-    <input type="submit" value="Update User" class="btn btn-secondary"/>
+    <input type="submit" value="Update User" class="btn btn-outline-secondary"/>
 </form>
 
 

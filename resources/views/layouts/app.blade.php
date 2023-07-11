@@ -39,6 +39,14 @@
                         <a href={{URL::to('/permissions')}} class="nav-link">To Permissions</a>
                     </li>
                     @endcan
+                    {{-- @can('status administrate') --}}
+                    <li class="nav-item">
+                        <a href={{URL::to('/statuses')}} class="nav-link">To Statuses</a>
+                    </li>
+                    {{-- @endcan --}}
+                    <li class="nav-item">
+                        <a href={{URL::to('/placements')}} class="nav-link">To Placements</a>
+                    </li>
                 </ul>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

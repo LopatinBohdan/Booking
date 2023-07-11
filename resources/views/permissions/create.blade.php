@@ -5,6 +5,6 @@
 <form action="{{route('permissions.store')}}" method="post">
     @csrf
     <input name="name" class="form-control" required/>
-    <input type="submit" class="btn btn-primary" value="Add Permission">
+    <input type="submit" class="btn btn-outline-primary" value="Add Permission">
 </form>
 @endsection

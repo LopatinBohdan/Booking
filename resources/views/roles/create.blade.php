@@ -12,6 +12,6 @@
             </label>
         @endfor
    </div>
-    <input type="submit" class="btn btn-primary" value="Add Role">
+    <input type="submit" class="btn btn-outline-primary" value="Add Role">
 </form>
 @endsection

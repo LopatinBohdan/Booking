@@ -17,11 +17,11 @@
                <td>{{$user->name}}</td>
                <td>
                 <div class="d-flex">
-                    <a href="{{URL::to('users/'.$user->id.'/edit')}}" class='btn btn-warning me-3'>Edit</a>
+                    <a href="{{URL::to('users/'.$user->id.'/edit')}}" class='btn btn-outline-secondary me-3'>Edit</a>
                     <form method="post" action="{{route('users.destroy',$user->id)}}">
                          @csrf
                         @method('DELETE')
-                    <input type="submit" value="Delete" class="btn btn-danger"/>
+                    <input type="submit" value="Delete" class="btn btn-outline-danger"/>
                 </form>
                 </div>
                 
