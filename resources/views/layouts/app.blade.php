@@ -24,16 +24,19 @@
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    {{-- 1 permission --}}
                    @can('role administrate')
                     <li class="nav-item">
                         <a href={{URL::to('/roles')}} class="nav-link">To Roles</a>
                     </li>
                     @endcan
+                    {{-- 2 permission --}}
                     @can('user administrate')
                     <li class="nav-item">
                         <a href={{URL::to('/users')}} class="nav-link">To Users</a>
                     </li>
                     @endcan
+                    {{-- 3 permission --}}
                     @can('permission administrate')
                     <li class="nav-item">
                         <a href={{URL::to('/permissions')}} class="nav-link">To Permissions</a>
